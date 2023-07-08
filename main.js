@@ -1,6 +1,27 @@
-const jsonData = [
-  { id: 1, name: "Grace", sex: "Male" },
-  { id: 2, name: "Bahizi", sex: "Male" },
-  { id: 3, name: "Peter", sex: "Male" },
-  { id: 4, name: "Mapendano", sex: "Male" },
-];
+var character = document.getElementById("character"),
+  block = document.getElementById("block");
+
+function jumb() {
+  if (character.classList != "animate") {
+    character.classList.add("animate");
+  }
+  setTimeout(function () {
+    character.classList.remove("animate");
+  }, 500);
+}
+
+var checkDead = setInterval(() => {
+  var characterTop = parseInt(
+    window.getComputedStyle(character).getPropertyValue("top")
+  );
+
+  var blockLeft = parseInt(
+    window.getComputedStyle(block).getPropertyValue("left")
+  );
+
+  if (blockLeft < 20 && blockLeft > 0 && characterTop >= 130) {
+    block.style.animation = "none";
+    block.style.display = "none";
+    alert("You close");
+  }
+});
