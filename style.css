@@ -42,8 +42,9 @@ ul li {
   animation: jumb 580ms infinite;
 }
 #block {
-  width: 28px;
+  width: 20px;
   height: 20px;
+  border-radius: 50%;
   background-color: blue;
   position: relative;
   top: 130px;
